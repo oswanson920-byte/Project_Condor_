@@ -116,7 +116,7 @@ export default function ProjectCondorLanding() {
 
           <Card className="rounded-3xl shadow-lg mt-10">
             <CardContent className="p-10">
-              <p className="text-xl font-semibold">Launch Price: $49</p>
+              <p className="text-xl font-semibold">Launch Price: $55</p>
               <p className="mt-2 text-gray-600">
                 Includes magnetic base, heel strap, cushioning layer, and travel
                 pouch.
