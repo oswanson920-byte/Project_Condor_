@@ -1,0 +1,145 @@
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import { ShoppingCart, Zap, ShieldCheck, Footprints } from "lucide-react";
+
+export default function ProjectCondorLanding() {
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 text-gray-900">
+      {/* Hero */}
+      <section className="px-6 py-20 max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <h1 className="text-5xl font-bold leading-tight">
+            Project Condor
+            <span className="block text-xl mt-3 text-gray-600">
+              Magnetic Golf Training Aid
+            </span>
+          </h1>
+          <p className="mt-6 text-lg text-gray-700">
+            A fully mechanical wearable training device designed to prevent
+            premature heel lift during the downswing — improving balance,
+            consistency, and power.
+          </p>
+          <div className="mt-8 flex gap-4">
+            <Button className="rounded-2xl px-6 py-6 text-lg flex gap-2">
+              <ShoppingCart className="w-5 h-5" /> Pre‑Order Now
+            </Button>
+            <Button
+              variant="outline"
+              className="rounded-2xl px-6 py-6 text-lg"
+            >
+              Learn More
+            </Button>
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+        >
+          <Card className="rounded-3xl shadow-xl">
+            <CardContent className="p-10">
+              <h2 className="text-2xl font-semibold">Simple. Portable. Powerful.</h2>
+              <p className="mt-4 text-gray-600">
+                No electronics, no sensors, no batteries. Just magnetic
+                interaction that provides instant tactile feedback.
+              </p>
+              <div className="mt-6 grid gap-4">
+                <div className="flex items-center gap-3">
+                  <Footprints className="w-6 h-6" />
+                  <span>Keep your heel grounded longer</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Zap className="w-6 h-6" />
+                  <span>Train proper weight transfer naturally</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <ShieldCheck className="w-6 h-6" />
+                  <span>Durable, affordable, and outdoor‑ready</span>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </motion.div>
+      </section>
+
+      {/* Features */}
+      <section className="px-6 py-16 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-center">
+            How Project Condor Works
+          </h2>
+          <p className="text-center mt-4 text-gray-600 max-w-2xl mx-auto">
+            A pair of strategically positioned magnets provides resistance until
+            the correct follow‑through phase.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-8 mt-12">
+            {[
+              {
+                title: "Attach",
+                desc: "Strap one magnet near your rear heel and place the base magnet behind your foot.",
+              },
+              {
+                title: "Swing",
+                desc: "The magnetic force encourages proper heel contact through the early downswing.",
+              },
+              {
+                title: "Feedback",
+                desc: "Premature heel lift breaks connection early — instant tactile correction.",
+              },
+            ].map((f, i) => (
+              <Card key={i} className="rounded-3xl shadow-md">
+                <CardContent className="p-8">
+                  <h3 className="text-xl font-semibold">{f.title}</h3>
+                  <p className="mt-3 text-gray-600">{f.desc}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Preorder */}
+      <section className="px-6 py-20 bg-gray-50">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-4xl font-bold">Pre‑Order Project Condor</h2>
+          <p className="mt-4 text-gray-600">
+            Be the first to experience the simplest golf swing training aid ever
+            made.
+          </p>
+
+          <Card className="rounded-3xl shadow-lg mt-10">
+            <CardContent className="p-10">
+              <p className="text-xl font-semibold">Launch Price: $49</p>
+              <p className="mt-2 text-gray-600">
+                Includes magnetic base, heel strap, cushioning layer, and travel
+                pouch.
+              </p>
+
+              <div className="mt-8">
+                <Button className="rounded-2xl px-10 py-6 text-lg">
+                  Reserve Yours Today
+                </Button>
+              </div>
+
+              <p className="mt-4 text-sm text-gray-500">
+                Shipping begins Spring 2026. Limited first batch.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-10 text-center text-gray-500 text-sm">
+        © {new Date().getFullYear()} Project Condor. All rights reserved.
+      </footer>
+    </div>
+  );
+}
